@@ -1,8 +1,14 @@
 <template>
-  <div>
-    <!-- <img :src="images.urls.regular" /> -->
-    {{ id }}
-  </div>
+  <section>
+    <div v-if="!pending">
+      <picture>
+        <source :srcset="image?.urls?.small" media="(max-width: 600px)" />
+        <img :src="image?.urls?.regular" :alt="image?.alt_description" />
+      </picture>
+    </div>
+    <p class="loading" v-else>Loading...</p>
+    <p v-if="error" class="error">{{ error }}.</p>
+  </section>
 </template>
 
 <script setup lang="ts">
@@ -13,10 +19,11 @@ import { onMounted } from "vue";
 const route = useRoute();
 const id = route.params.id;
 
-const { loadData, images, error, pending } = useGetImages(
-  `https://api.unsplash.com/photos/Dwu85P9SOIk?client_id=${
+const { loadData, image, error, pending } = useGetImages(
+  `https://api.unsplash.com/photos/${id}?client_id=${
     import.meta.env.VITE_ACCES_KEY
-  }`
+  }`,
+  "image"
 );
 
 onMounted(() => {
@@ -24,4 +31,11 @@ onMounted(() => {
 });
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.loading,
+.error {
+  padding-block: 2rem;
+  text-align: center;
+  font-size: 1.25rem;
+}
+</style>

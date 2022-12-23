@@ -1,32 +1,34 @@
-export interface Img {
+export interface Image {
   id: string;
   created_at: string;
   updated_at: string;
-  promoted_at: string;
   width: number;
   height: number;
   color: string;
   blur_hash: string;
-  description: null;
-  alt_description: string;
-  urls: Urls;
-  links: ImgLinks;
+  downloads: number;
   likes: number;
   liked_by_user: boolean;
-  current_user_collections: any[];
-  sponsorship: null;
-  topic_submissions: ImgTopicSubmissions;
-  user: User;
+  public_domain: boolean;
+  description: string;
+  alt_description: string;
   exif: Exif;
   location: Location;
-  meta: Meta;
-  public_domain: boolean;
-  tags: TagsPreviewElement[];
-  tags_preview: TagsPreviewElement[];
-  views: number;
-  downloads: number;
-  topics: any[];
-  related_collections: RelatedCollections;
+  tags: Tag[];
+  current_user_collections: CurrentUserCollection[];
+  urls: Urls;
+  links: ImageLinks;
+  user: User;
+}
+
+export interface CurrentUserCollection {
+  id: number;
+  title: string;
+  published_at: string;
+  last_collected_at: string;
+  updated_at: string;
+  cover_photo: null;
+  user: null;
 }
 
 export interface Exif {
@@ -39,7 +41,7 @@ export interface Exif {
   iso: number;
 }
 
-export interface ImgLinks {
+export interface ImageLinks {
   self: string;
   html: string;
   download: string;
@@ -47,9 +49,8 @@ export interface ImgLinks {
 }
 
 export interface Location {
-  name: null;
-  city: null;
-  country: null;
+  city: string;
+  country: string;
   position: Position;
 }
 
@@ -58,64 +59,8 @@ export interface Position {
   longitude: number;
 }
 
-export interface Meta {
-  index: boolean;
-}
-
-export interface RelatedCollections {
-  total: number;
-  type: string;
-  results: Result[];
-}
-
-export interface Result {
-  id: string;
+export interface Tag {
   title: string;
-  description: null;
-  published_at: string;
-  last_collected_at: string;
-  updated_at: string;
-  curated: boolean;
-  featured: boolean;
-  total_photos: number;
-  private: boolean;
-  share_key: string;
-  tags: ResultTag[];
-  links: ResultLinks;
-  user: User;
-  cover_photo: ResultCoverPhoto;
-  preview_photos: PreviewPhoto[];
-}
-
-export interface ResultCoverPhoto {
-  id: string;
-  created_at: string;
-  updated_at: string;
-  promoted_at: null | string;
-  width: number;
-  height: number;
-  color: string;
-  blur_hash: string;
-  description: string;
-  alt_description: string;
-  urls: Urls;
-  links: ImgLinks;
-  likes: number;
-  liked_by_user: boolean;
-  current_user_collections: any[];
-  sponsorship: null;
-  topic_submissions: PurpleTopicSubmissions;
-  user: User;
-}
-
-export interface PurpleTopicSubmissions {
-  interiors?: BusinessWork;
-  "business-work"?: BusinessWork;
-}
-
-export interface BusinessWork {
-  status: string;
-  approved_on: string;
 }
 
 export interface Urls {
@@ -124,7 +69,6 @@ export interface Urls {
   regular: string;
   small: string;
   thumb: string;
-  small_s3: string;
 }
 
 export interface User {
@@ -132,21 +76,13 @@ export interface User {
   updated_at: string;
   username: string;
   name: string;
-  first_name: string;
-  last_name: null | string;
-  twitter_username: null | string;
-  portfolio_url: null | string;
-  bio: null | string;
-  location: null | string;
-  links: UserLinks;
-  profile_image: ProfileImage;
-  instagram_username: null | string;
-  total_collections: number;
+  portfolio_url: string;
+  bio: string;
+  location: string;
   total_likes: number;
   total_photos: number;
-  accepted_tos: boolean;
-  for_hire: boolean;
-  social: Social;
+  total_collections: number;
+  links: UserLinks;
 }
 
 export interface UserLinks {
@@ -155,99 +91,4 @@ export interface UserLinks {
   photos: string;
   likes: string;
   portfolio: string;
-  following: string;
-  followers: string;
 }
-
-export interface ProfileImage {
-  small: string;
-  medium: string;
-  large: string;
-}
-
-export interface Social {
-  instagram_username: null | string;
-  portfolio_url: null | string;
-  twitter_username: null | string;
-  paypal_email: null;
-}
-
-export interface ResultLinks {
-  self: string;
-  html: string;
-  photos: string;
-  related: string;
-}
-
-export interface PreviewPhoto {
-  id: string;
-  created_at: string;
-  updated_at: string;
-  blur_hash: string;
-  urls: Urls;
-}
-
-export interface ResultTag {
-  type: Type;
-  title: string;
-  source?: Source;
-}
-
-export interface Source {
-  ancestry: Ancestry;
-  title: string;
-  subtitle: string;
-  description: string;
-  meta_title: string;
-  meta_description: string;
-  cover_photo: SourceCoverPhoto;
-}
-
-export interface Ancestry {
-  type: Category;
-  category: Category;
-  subcategory: Category;
-}
-
-export interface Category {
-  slug: string;
-  pretty_slug: string;
-}
-
-export interface SourceCoverPhoto {
-  id: string;
-  created_at: string;
-  updated_at: string;
-  promoted_at: null | string;
-  width: number;
-  height: number;
-  color: string;
-  blur_hash: string;
-  description: null | string;
-  alt_description: string;
-  urls: Urls;
-  links: ImgLinks;
-  likes: number;
-  liked_by_user: boolean;
-  current_user_collections: any[];
-  sponsorship: null;
-  topic_submissions: FluffyTopicSubmissions;
-  premium: boolean;
-  user: User;
-}
-
-export interface FluffyTopicSubmissions {
-  wallpapers?: BusinessWork;
-}
-
-export enum Type {
-  LandingPage = "landing_page",
-  Search = "search",
-}
-
-export interface TagsPreviewElement {
-  type: Type;
-  title: string;
-}
-
-export interface ImgTopicSubmissions {}

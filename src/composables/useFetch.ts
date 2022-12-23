@@ -1,9 +1,10 @@
 import { ref } from "vue";
 import type { ImagesData } from "@/interfaces/types";
-// import type { Img } from "@/interfaces/oneImgTypes";
+import type { Image } from "@/interfaces/oneImgTypes";
 
-export const useGetImages = (url: string) => {
-  const images = ref<ImagesData[] | any>([]);
+export const useGetImages = (url: string, method: string = "images") => {
+  const images = ref<ImagesData[] | Image>([]);
+  const image = ref<Image>();
   const error = ref<null | string>(null);
   const pending = ref<boolean>(false);
 
@@ -16,8 +17,14 @@ export const useGetImages = (url: string) => {
           "Content-Type": "application/json",
         },
       });
-      const data: ImagesData[] = await response.json();
-      images.value = data;
+
+      if (method === "images") {
+        const data: ImagesData[] = await response.json();
+        images.value = data;
+      } else {
+        const data: Image = await response.json();
+        image.value = data;
+      }
     } catch (err) {
       error.value = (err as Error).message;
     } finally {
@@ -25,5 +32,5 @@ export const useGetImages = (url: string) => {
     }
   };
 
-  return { loadData, images, error, pending };
+  return { loadData, images, image, error, pending };
 };

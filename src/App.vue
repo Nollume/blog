@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <header>
-      <h1>Logo</h1>
+      <h1 @click="router.push({ name: 'home' })">Logo</h1>
       <Navigation />
     </header>
     <main>
@@ -13,6 +13,8 @@
 
 <script setup lang="ts">
 import Navigation from "./components/Navigation.vue";
+import { useRouter } from "vue-router";
+const router = useRouter();
 </script>
 
 <style scoped lang="scss">
@@ -39,6 +41,9 @@ h1 {
 
   text-transform: uppercase;
   text-decoration: underline wavy;
+
+  user-select: none;
+  cursor: pointer;
 
   margin: 0;
   padding-block: 0.5rem;

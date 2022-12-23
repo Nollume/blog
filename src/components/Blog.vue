@@ -46,7 +46,7 @@ onMounted(() => {
 }
 .blog-container {
   margin: 0 auto;
-  
+
   width: 58%;
 }
 .lists-wrapper {
