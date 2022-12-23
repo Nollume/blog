@@ -1,13 +1,10 @@
 <template>
   <div class="info">
-    <p class="headline">
-      <slot name="headline" />
-    </p>
+    <slot name="headline" />
 
     <slot name="title" />
-    <p>
-      <slot name="paragraph" />
-    </p>
+
+    <slot name="paragraph" />
 
     <slot name="button" />
   </div>
@@ -19,7 +16,7 @@
 @import "../assets/css/var";
 .info {
   width: 100%;
-  margin-bottom: 3.5rem;
+  margin-bottom: 3rem;
 
   display: flex;
   flex-direction: column;
@@ -30,8 +27,8 @@
       weight: normal;
       size: clamp(1rem, 2vw, 2rem);
     }
-    line-height: 2.25rem;
-    letter-spacing: -1px;
+    line-height: clamp(1.25rem, 2vw, 2.25rem);
+    letter-spacing: -0.5px;
 
     margin: 0;
   }
@@ -43,18 +40,11 @@
     text-transform: uppercase;
     font-weight: 100;
     margin: 0;
-    margin-bottom: 1rem;
   }
 
-  button {
-    appearance: none;
+  a {
     border: solid 1px $bg-color;
-
-    padding-block: 0.5rem;
-    padding-inline: 1.5rem;
-    margin-top: 2rem;
-
-    background-color: transparent;
+    @extend %buttons;
   }
 }
 </style>
