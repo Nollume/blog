@@ -1,14 +1,17 @@
 $text-color: rgb(17 24 39);
 $text-color-lighten: rgb(107 114 128);
 $bg-color: rgb(249 250 251);
-$accent-color: rgb(185 28 28);
+$accent-color: rgb(224, 4, 48);
+$blog-accent-color: rgb(253, 239, 230);
 
 %buttons {
   text-decoration: none;
 
   padding-block: 0.6rem;
   padding-inline: 1.5rem;
+
   background-color: transparent;
+
   position: relative;
 }
 
@@ -21,4 +24,24 @@ $accent-color: rgb(185 28 28);
   transition: all 0.4s ease-in-out;
 
   background-color: $accent-color;
+}
+
+%title {
+  width: 100%;
+  height: clamp(5rem, 12vw, 14rem);
+
+  margin-bottom: 4.25rem;
+
+  display: flex;
+  align-items: center;
+
+  background-color: $blog-accent-color;
+
+  h2 {
+    margin: 0;
+    margin-left: 20%;
+
+    font-size: clamp(1.35rem, 2vw, 2rem);
+    letter-spacing: -0.5px;
+  }
 }

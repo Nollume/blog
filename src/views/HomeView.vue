@@ -35,10 +35,10 @@
 <script setup lang="ts">
 import BlogPost from "@/components/BlogPost.vue";
 import Blog from "@/components/Blog.vue";
-import { useGetImages } from "@/composables/useFetch";
+import { GetImages } from "@/composables/useFetch";
 import { onMounted } from "vue";
 
-const { loadData, images, error, pending } = useGetImages(
+const { loadData, images, error, pending } = GetImages(
   `https://api.unsplash.com/photos?client_id=${
     import.meta.env.VITE_ACCES_KEY
   }&per_page=4&page=23&order_by=latest`

@@ -2,16 +2,16 @@ import { ref } from "vue";
 import type { ImagesData } from "@/interfaces/types";
 import type { Image } from "@/interfaces/oneImgTypes";
 
-export const useGetImages = (url: string, method: string = "images") => {
-  const images = ref<ImagesData[] | Image>([]);
+export const GetImages = (url: string, method: string = "images") => {
+  const images = ref<ImagesData[]>([]);
   const image = ref<Image>();
-  const error = ref<null | string>(null);
+  const error = ref<string>("");
   const pending = ref<boolean>(false);
 
   const loadData = async (): Promise<void> => {
     try {
       pending.value = true;
-      error.value = null;
+      error.value = "";
       const response: Response = await fetch(url, {
         headers: {
           "Content-Type": "application/json",
