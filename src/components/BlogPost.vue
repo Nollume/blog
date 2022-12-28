@@ -25,7 +25,7 @@
   h3 {
     font: {
       weight: normal;
-      size: clamp(1rem, 2vw, 2rem);
+      size: clamp(1.25rem, 2vw, 2rem);
     }
     line-height: clamp(1.25rem, 2vw, 2.25rem);
     letter-spacing: -0.5px;

@@ -118,4 +118,22 @@ ul {
     }
   }
 }
+@media (max-width: 96rem) {
+}
+
+@media (max-width: 80rem) {
+  .info {
+    margin-bottom: 2rem;
+  }
+}
+@media (max-width: 64rem) {
+  ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 40rem) {
+  ul {
+    grid-template-columns: 1fr;
+  }
+}
 </style>

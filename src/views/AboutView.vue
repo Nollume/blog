@@ -47,11 +47,31 @@
 .title-wrapper {
   @extend %title;
 }
-.about{
-  margin-bottom: 4.25rem;
+.about {
+  margin-bottom: 7.25rem;
 }
 .content-container {
   width: 40%;
   margin-inline: auto;
+}
+@media (max-width: 80rem) {
+  .content-container {
+    width: 55%;
+  }
+}
+@media (max-width: 64rem) {
+  .content-container {
+    width: 65%;
+  }
+}
+@media (max-width: 48rem) {
+  .content-container {
+    width: 75%;
+  }
+}
+@media (max-width: 40rem) {
+  .content-container {
+    width: 85%;
+  }
 }
 </style>

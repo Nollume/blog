@@ -1,13 +1,31 @@
 <template>
-  <nav>
-    <RouterLink class="home-link" :to="{ name: 'home' }">Home</RouterLink>
-    <RouterLink :to="{ name: 'about' }">About</RouterLink>
-    <RouterLink :to="{ name: 'blog' }">Blog</RouterLink>
-    <RouterLink :to="{ name: 'contact' }">Contact</RouterLink>
+  <nav :class="menu ? 'hiddenNav' : ''">
+    <RouterLink
+      @click="closeNavigation"
+      class="home-link"
+      :to="{ name: 'home' }"
+      >Home</RouterLink
+    >
+    <RouterLink @click="closeNavigation" :to="{ name: 'about' }"
+      >About</RouterLink
+    >
+    <RouterLink @click="closeNavigation" :to="{ name: 'blog' }"
+      >Blog</RouterLink
+    >
+    <RouterLink @click="closeNavigation" :to="{ name: 'contact' }"
+      >Contact</RouterLink
+    >
+    <CloseIcon @click="closeNavigation" class="close-menu" />
   </nav>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import CloseIcon from "@/components/icons/CloseIcon.vue";
+defineProps<{ menu: boolean }>();
+const emits = defineEmits(["closeNav"]);
+
+const closeNavigation = () => emits("closeNav", true);
+</script>
 
 <style scoped lang="scss">
 @import "@/assets/css/var";
@@ -25,6 +43,9 @@ nav {
 
   text-transform: uppercase;
 
+  .close-menu {
+    display: none;
+  }
   a {
     color: $text-color;
 
@@ -65,6 +86,30 @@ nav {
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
     border-top: 5px solid $text-color;
+  }
+}
+.hiddenNav {
+  display: flex;
+}
+@media (max-width: 64rem) {
+  nav {
+    flex-direction: column;
+    justify-content: center;
+
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+
+    margin-right: 0;
+
+    background-color: $bg-color;
+    .close-menu {
+      display: inline-block;
+      cursor: pointer;
+    }
+  }
+  .hiddenNav {
+    display: none;
   }
 }
 </style>

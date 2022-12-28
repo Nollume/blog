@@ -35,7 +35,7 @@
 form {
   width: 40%;
   margin-inline: auto;
-  margin-bottom: 4.25rem;
+  margin-bottom: 7.25rem;
 
   display: grid;
   gap: 0.5rem;
@@ -85,6 +85,26 @@ form {
         transform: scaleX(100%);
       }
     }
+  }
+}
+@media (max-width: 80rem) {
+  form {
+    width: 55%;
+  }
+}
+@media (max-width: 64rem) {
+  form {
+    width: 65%;
+  }
+}
+@media (max-width: 48rem) {
+  form {
+    width: 75%;
+  }
+}
+@media (max-width: 40rem) {
+  form {
+    width: 85%;
   }
 }
 </style>

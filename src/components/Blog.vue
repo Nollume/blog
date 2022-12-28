@@ -48,6 +48,7 @@ onMounted(() => {
   margin: 0 auto;
 
   width: 58%;
+  margin-bottom: 4.25rem;
 }
 .lists-wrapper {
   display: grid;
@@ -62,4 +63,25 @@ ul {
   display: flex;
   flex-direction: column;
 }
+
+@media (max-width: 80rem) {
+  .blog-container {
+    width: 65%;
+  }
+}
+@media (max-width: 64rem) {
+  .blog-container {
+    width: 75%;
+  }
+}
+@media (max-width: 48rem) {
+  .blog-container {
+    width: 85%;
+  }
+}
+// @media (max-width: 40rem) {
+//   .content-container {
+//     width: 85%;
+//   }
+// }
 </style>

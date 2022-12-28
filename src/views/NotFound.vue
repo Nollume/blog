@@ -36,6 +36,7 @@ p {
 button {
   @extend %buttons;
   margin-top: 1.5rem;
+  margin-bottom: 4.25rem;
   &::after {
     @extend %hoverPseudoElEffect;
 

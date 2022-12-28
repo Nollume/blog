@@ -24,8 +24,33 @@
         </p>
       </article>
       <picture>
-        <source :srcset="image?.urls?.small" media="(max-width: 600px)" />
-        <img :src="image?.urls?.regular" :alt="image?.alt_description" />
+        <source
+          media="(max-width: 400px)"
+          srcset="
+            https://ik.imagekit.io/nollume/tr:w-400/geran-de-klerk-WJkc3xZjSXw-unsplash_At_phX5wT.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669043507954
+          "
+        />
+        <source
+          media="(max-width: 600px)"
+          srcset="
+            https://ik.imagekit.io/nollume/tr:w-600/geran-de-klerk-WJkc3xZjSXw-unsplash_At_phX5wT.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669043507954
+          "
+        />
+        <source
+          media="(max-width: 800px)"
+          srcset="
+            https://ik.imagekit.io/nollume/tr:w-800/geran-de-klerk-WJkc3xZjSXw-unsplash_At_phX5wT.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669043507954
+          "
+        />
+        <source
+          media="(max-width: 1200px)"
+          srcset="
+            https://ik.imagekit.io/nollume/tr:w-1200/geran-de-klerk-WJkc3xZjSXw-unsplash_At_phX5wT.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669043507954
+          "
+        />
+        <img
+          src="https://ik.imagekit.io/nollume/tr:w-600/geran-de-klerk-WJkc3xZjSXw-unsplash_At_phX5wT.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669043507954"
+        />
       </picture>
       <p>
         {{ text }}
@@ -100,7 +125,7 @@ section {
     line-height: 1.38rem;
   }
   & > :last-child {
-    margin-bottom: 4.25rem;
+    margin-bottom: 7.25rem;
   }
 
   picture {
