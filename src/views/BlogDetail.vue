@@ -26,35 +26,7 @@
           pariatur, nam quasi molestiae explicabo.
         </p>
       </article>
-      <picture>
-        <source
-          media="(max-width: 400px)"
-          srcset="
-            https://ik.imagekit.io/nollume/tr:w-400/geran-de-klerk-WJkc3xZjSXw-unsplash_At_phX5wT.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669043507954
-          "
-        />
-        <source
-          media="(max-width: 600px)"
-          srcset="
-            https://ik.imagekit.io/nollume/tr:w-600/geran-de-klerk-WJkc3xZjSXw-unsplash_At_phX5wT.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669043507954
-          "
-        />
-        <source
-          media="(max-width: 800px)"
-          srcset="
-            https://ik.imagekit.io/nollume/tr:w-800/geran-de-klerk-WJkc3xZjSXw-unsplash_At_phX5wT.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669043507954
-          "
-        />
-        <source
-          media="(max-width: 1200px)"
-          srcset="
-            https://ik.imagekit.io/nollume/tr:w-1200/geran-de-klerk-WJkc3xZjSXw-unsplash_At_phX5wT.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669043507954
-          "
-        />
-        <img
-          src="https://ik.imagekit.io/nollume/tr:w-600/geran-de-klerk-WJkc3xZjSXw-unsplash_At_phX5wT.jpg?ik-sdk-version=javascript-1.4.3&updatedAt=1669043507954"
-        />
-      </picture>
+      <BlogDetailPicture />
       <p>
         {{ text }}
       </p>
@@ -65,6 +37,7 @@
 </template>
 
 <script setup lang="ts">
+import BlogDetailPicture from "@/components/BlogDetailPicture.vue";
 import { useRoute } from "vue-router";
 import { GetImages } from "@/composables/useFetch";
 import { onMounted } from "vue";
@@ -81,8 +54,8 @@ const { loadData, image, error, pending } = GetImages(
   "image"
 );
 
-onMounted(() => {
-  loadData();
+onMounted(async () => {
+  await loadData();
 });
 </script>
 

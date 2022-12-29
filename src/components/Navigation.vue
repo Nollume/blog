@@ -88,9 +88,7 @@ nav {
     border-top: 5px solid $text-color;
   }
 }
-.hiddenNav {
-  display: flex;
-}
+
 @media (max-width: 64rem) {
   nav {
     flex-direction: column;
@@ -103,6 +101,8 @@ nav {
     margin-right: 0;
 
     background-color: $bg-color;
+
+    transition: all 0.3s ease-in-out;
     .close-menu {
       display: inline-block;
       cursor: pointer;
@@ -114,7 +114,8 @@ nav {
     }
   }
   .hiddenNav {
-    display: none;
+    transform: translateX(100%);
+    opacity: 0;
   }
 }
 </style>

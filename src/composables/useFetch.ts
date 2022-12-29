@@ -1,6 +1,6 @@
 import { ref } from "vue";
 import type { ImagesData } from "@/interfaces/types";
-import type { Image } from "@/interfaces/oneImgTypes";
+import type { Image } from "@/interfaces/standaloneImage";
 
 export const GetImages = (url: string, method: string = "images") => {
   const images = ref<ImagesData[]>([]);
