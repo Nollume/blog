@@ -13,6 +13,7 @@
 <script setup lang="ts">
 import BlogList from "./BlogList.vue";
 import { GetImages } from "@/composables/useFetch";
+
 import { onMounted, computed } from "vue";
 
 const { loadData, images, error, pending } = GetImages(
@@ -22,17 +23,19 @@ const { loadData, images, error, pending } = GetImages(
 );
 
 const getImagesFirstColumn = computed(() => {
-  return images.value.slice(0, 4);
+  return images.value.slice(0, 4).concat(images.value.slice(9, 11));
 });
+
 const getImagesSecondColumn = computed(() => {
-  return images.value.slice(4, 9);
+  return images.value.slice(4, 9).concat(images.value.slice(11, 13));
 });
+
 const getImagesThirdColumn = computed(() => {
   return images.value.slice(9, 13);
 });
 
-onMounted(() => {
-  loadData();
+onMounted(async () => {
+  await loadData();
 });
 </script>
 
@@ -64,24 +67,35 @@ ul {
   flex-direction: column;
 }
 
-@media (max-width: 80rem) {
+@media (max-width: 113.75rem) {
   .blog-container {
     width: 65%;
   }
 }
-@media (max-width: 64rem) {
+@media (max-width: 101.25rem) {
   .blog-container {
     width: 75%;
+  }
+  .lists-wrapper {
+    column-gap: 1.5rem;
+  }
+}
+@media (max-width: 64rem) {
+  .lists-wrapper {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (max-width: 48rem) {
   .blog-container {
     width: 85%;
   }
+  .lists-wrapper {
+    column-gap: 1rem;
+  }
 }
-// @media (max-width: 40rem) {
-//   .content-container {
-//     width: 85%;
-//   }
-// }
+@media (max-width: 40rem) {
+  .lists-wrapper {
+    grid-template-columns: 1fr;
+  }
+}
 </style>

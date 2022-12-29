@@ -40,6 +40,7 @@ $blog-accent-color: rgb(253, 239, 230);
   h2 {
     margin: 0;
     margin-left: 20%;
+    padding-inline: 0.5rem;
 
     font-size: clamp(1.35rem, 2vw, 2rem);
     letter-spacing: -0.5px;

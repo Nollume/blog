@@ -1,13 +1,19 @@
 <template>
   <div>
     <h2>404</h2>
-    <p>Page not found</p>
+    <p>
+      Page <span>{{ path }}</span> not found
+    </p>
     <button @click="redirectHome">Back Home</button>
   </div>
 </template>
 
 <script setup lang="ts">
-import router from "@/router/index";
+import { useRouter, useRoute } from "vue-router";
+
+const router = useRouter();
+const route = useRoute();
+const path = route.path;
 
 const redirectHome = () => {
   router.push({ name: "home" });
@@ -33,13 +39,16 @@ p {
 
   font-size: clamp(1.5rem, 5vw, 3rem);
 }
+span {
+  color: $accent-color;
+}
 button {
   @extend %buttons;
   margin-top: 1.5rem;
   margin-bottom: 4.25rem;
   &::after {
     @extend %hoverPseudoElEffect;
-
+    opacity: 0.5;
     inset: 0;
     z-index: -1;
   }

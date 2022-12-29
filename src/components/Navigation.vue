@@ -106,6 +106,11 @@ nav {
     .close-menu {
       display: inline-block;
       cursor: pointer;
+
+      position: absolute;
+      top: 1rem;
+      right: 0;
+      padding-inline: clamp(1rem, 2.5vw, 3rem);
     }
   }
   .hiddenNav {

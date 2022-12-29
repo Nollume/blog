@@ -4,7 +4,7 @@
       <div class="image">
         <img
           :src="img.urls.small"
-          :alt="img.alt_description ? img.alt_description : ''"
+          :alt="img.alt_description ? img.alt_description : 'image'"
         />
       </div>
       <BlogPost>
@@ -61,7 +61,20 @@ defineProps<{
       aspect-ratio: 1/0.68;
     }
   }
+  li:nth-child(5) {
+    display: none;
+    .image {
+      aspect-ratio: 1/1.08;
+    }
+  }
+  li:nth-child(6) {
+    display: none;
+    .image {
+      aspect-ratio: 1/1.08;
+    }
+  }
 }
+
 .second-list {
   li:first-child {
     .image {
@@ -89,6 +102,18 @@ defineProps<{
   li:nth-child(5) {
     .image {
       aspect-ratio: 1/1.08;
+    }
+  }
+  li:nth-child(6) {
+    display: none;
+    .image {
+      aspect-ratio: 1/1.27;
+    }
+  }
+  li:nth-child(7) {
+    display: none;
+    .image {
+      aspect-ratio: 1/1.22;
     }
   }
 }
@@ -189,6 +214,22 @@ li {
     &::after {
       transform: scaleX(100%);
     }
+  }
+}
+@media (max-width: 64rem) {
+  .info {
+    margin-bottom: 2rem;
+  }
+  .first-list,
+  .second-list {
+    li:nth-child(5),
+    li:nth-child(6),
+    li:nth-child(7) {
+      display: flex;
+    }
+  }
+  .third-list {
+    display: none;
   }
 }
 </style>

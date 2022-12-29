@@ -3,8 +3,7 @@
     <header>
       <h1 @click="redirectHome">Logo</h1>
       <Navigation :menu="menu" @closeNav="menu = $event" />
-      <MenuIcon v-if="menu" @click="menu = false" class="menu-icon" />
-      <CloseIcon v-else @click="menu = true" class="menu-icon" />
+      <MenuIcon @click="menu = false" class="menu-icon" />
     </header>
     <main>
       <RouterView />
@@ -16,7 +15,6 @@
 <script setup lang="ts">
 import Navigation from "./components/Navigation.vue";
 import MenuIcon from "./components/icons/MenuIcon.vue";
-import CloseIcon from "@/components/icons/CloseIcon.vue";
 import { ref } from "vue";
 
 import { useRouter } from "vue-router";
@@ -66,6 +64,7 @@ h1 {
   padding-right: 2rem;
   padding-left: clamp(1rem, 2.5vw, 3rem);
 }
+
 footer {
   width: 100%;
   height: 3rem;
@@ -90,7 +89,6 @@ footer {
       display: inline-block;
       cursor: pointer;
 
-      z-index: 100;
       padding-right: clamp(1rem, 2.5vw, 3rem);
     }
   }

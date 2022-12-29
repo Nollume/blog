@@ -63,6 +63,12 @@
   .content-container {
     width: 65%;
   }
+  .title-wrapper {
+    justify-content: center;
+    h2 {
+      margin-left: 0;
+    }
+  }
 }
 @media (max-width: 48rem) {
   .content-container {

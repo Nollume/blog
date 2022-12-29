@@ -1,7 +1,10 @@
 <template>
   <section>
     <div class="title-wrapper">
-      <h2>As a Designer, I Refuse to Call People 'Users'</h2>
+      <h2>
+        As a Designer,<br />
+        I Refuse to Call People 'Users'
+      </h2>
     </div>
     <div class="content-container" v-if="!pending">
       <picture>
@@ -97,6 +100,9 @@ onMounted(() => {
 section {
   width: 100%;
 }
+br {
+  display: none;
+}
 .content-container {
   width: 40%;
   margin: 0 auto;
@@ -137,6 +143,35 @@ section {
       width: 100%;
       object-fit: cover;
     }
+  }
+}
+@media (max-width: 80rem) {
+  .content-container {
+    width: 55%;
+  }
+}
+@media (max-width: 64rem) {
+  .content-container {
+    width: 65%;
+  }
+  .title-wrapper {
+    justify-content: center;
+    h2 {
+      margin-left: 0;
+    }
+  }
+}
+@media (max-width: 48rem) {
+  .content-container {
+    width: 75%;
+  }
+}
+@media (max-width: 40rem) {
+  br {
+    display: inline;
+  }
+  .content-container {
+    width: 85%;
   }
 }
 </style>
