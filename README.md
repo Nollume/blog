@@ -1,11 +1,11 @@
 # Blog
 
-Tu je dokončené moje zadanie. Mal som spraviť 3 responzívne podstránky s jedinečnou url 'homepage' 'blog' a 'blog-detail' vo VUE3 setup, na
-ostatné podstránky som vložil aspon niečo aby to nebolo prázdne. Neviem aký font bol použitý v zadaní teda som použil iný ale podobný.
-Neviem ako mal vyzerať responzívny dizajn na menších obrazovkách takže som to spravil podla seba.
+Tu je dokončené moje zadanie. Mal som spraviť 3 responzívne podstránky s jedinečnou url 'homepage' 'blog' a 'blog-detail' vo VUE3 composition API setup, na
+ostatné podstránky som vložil aspon niečo aby to nebolo prázdne. Neviem aký font bol použitý v zadaní teda som použil iný ale snažil som sa nájsť podobný.
+Neviem ako mal vyzerať dizajn na menších obrazovkách takže som to spravil podla seba.
 Mal som použiť volne prístupné obrázky z googlu, nechcel som ich dať priamo do projektu pretože by to spomalilo načítavanie stránky (a to som mal
-tiež čo najelpšie optimalizovať) takže som sa rozhodol že ich tam dám cez unsplash API. Snažil som sa robiť čo najviac prepoužitelný kod + TS typy.
-Normálne by som asi použil tailwind CSS pretože tak mi ide písanie css-ka najrýchlejšie, ale neviem či ho používate tak som použil SCSS.
+tiež čo najelpšie optimalizovať) takže som sa rozhodol že ich tam dám cez unsplash API. Snažil som sa robiť čo najviac prepoužitelný kod + TypeScript.
+Normálne by som asi použil tailwind CSS pretože si myslím že tak mi ide písanie css-ka najlepšie, ale neviem či ho používate tak som použil SCSS.
 
 This template should help get you started developing with Vue 3 in Vite.
 
