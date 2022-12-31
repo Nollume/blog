@@ -1,0 +1,1 @@
+import{d as e,o as _,c as o,b as a,B as t,_ as s}from"./index-92dfec29.js";const c=e({__name:"BlogView",setup(n){return(l,d)=>(_(),o("div",null,[a(t)]))}});const r=s(c,[["__scopeId","data-v-6d096ab3"]]);export{r as default};
