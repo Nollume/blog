@@ -4,8 +4,9 @@ Tu je dokončené moje zadanie. Mal som spraviť 3 responzívne podstránky s je
 ostatné podstránky som vložil aspon niečo aby to nebolo prázdne. Neviem aký font bol použitý v zadaní teda som použil iný ale snažil som sa nájsť podobný.
 Nevedel som ako má vyzerať dizajn na menších obrazovkách takže som to spravil podla seba.
 Mal som použiť volne prístupné obrázky z googlu, nechcel som ich dať priamo do projektu pretože by to spomalilo načítavanie stránky (a to som mal
-tiež čo najelpšie optimalizovať) takže som sa rozhodol že ich tam dám cez unsplash API. Snažil som sa robiť čo najviac prepoužitelný kod + TypeScript.
-Normálne by som asi použil tailwind CSS pretože si myslím že tak mi ide písanie css-ka najlepšie, ale neviem či ho používate tak som použil SCSS.
+tiež čo najelpšie optimalizovať) takže som sa rozhodol že ich tam fetchnem cez unsplash API. Snažil som sa robiť čo najviac prepoužitelný kod s TypeScript typmi.
+Najskôr som chcel použiť tailwind CSS pretože si myslím že tak mi ide písanie css-ka najlepšie hlavne pri responzivite, ale neviem či sa u vás používa tak som zvolil SCSS.
+Blog podstránku som chcel najskôr spraviť ako jeden velký grid ale boli tam nejaké problémy kde by som musel explicitne udávať výšku riadkov na rôznych rozlíšeniach takže som to spravil ako 3 stlpce čo mi prišlo ako najlepšia možnosť.
 
 This template should help get you started developing with Vue 3 in Vite.
 
@@ -37,7 +38,7 @@ npm install
 ### Compile and Hot-Reload for Development
 
 ```sh
-npm run dev
+npm run dev 
 ```
 
 ### Type-Check, Compile and Minify for Production
